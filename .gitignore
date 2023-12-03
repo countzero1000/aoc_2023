@@ -1,0 +1,4 @@
+bazel-bin
+bazel-aoc_2023
+bazel-out
+bazel-testlogs

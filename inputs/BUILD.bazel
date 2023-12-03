@@ -1,0 +1,4 @@
+exports_files([
+    "day_01.txt",
+    "day_02.txt",
+])

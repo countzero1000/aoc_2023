@@ -1,0 +1,46 @@
+load("@rules_cc//cc:defs.bzl", "cc_binary")
+
+cc_binary(
+    name = "day_01",
+    srcs = ["day_01.cc"],
+    data = [
+        "//inputs:day_01.txt",
+    ],
+    deps = [
+        ":solution",
+    ],
+)
+
+cc_binary(
+    name = "day_02",
+    srcs = ["day_02.cc"],
+    data = ["//inputs:day_02.txt"],
+    deps = [
+        ":solution",
+        ":status_macros",
+        "@com_google_absl//absl/container:flat_hash_map",
+        "@com_google_absl//absl/status",
+        "@com_google_absl//absl/strings",
+    ],
+)
+
+cc_library(
+    name = "solution",
+    hdrs = ["solution.h"],
+    deps = [
+        ":status_macros",
+        "@com_google_absl//absl/container:flat_hash_map",
+        "@com_google_absl//absl/status",
+        "@com_google_absl//absl/strings",
+    ],
+)
+
+cc_library(
+    name = "status_macros",
+    hdrs = ["status_macros.h"],
+    deps = [
+        "@com_google_absl//absl/base:core_headers",
+        "@com_google_absl//absl/status",
+        "@com_google_absl//absl/status:statusor",
+    ],
+)
